@@ -38,14 +38,15 @@ const MORSE_TABLE = {
 };
 
 function decode(expr) {
-    let exprArr = expr.split('');
+
+  let exprArr = expr.split('');
   let exprArrNew = [];
   let arrMorse = [];
-  let result = [];
+  let resArr = [];
 
   for(let i = 0; i < expr.length; i++) {
     exprArrNew.push(exprArr.slice(0, 10))
-    exprArr = exprArr.splice(10, arrExpr.length)
+    exprArr = exprArr.splice(10, exprArr.length)
   }
 
   for(let i = 0; i < exprArrNew.length; i++) {
@@ -85,12 +86,12 @@ function decode(expr) {
     }
     for (let key in MORSE_TABLE) {
       if(el === key) {
-        result.push(MORSE_TABLE[key])
+        resArr.push(MORSE_TABLE[key])
       }
     }
   })
 
-  return result.join('')
+  return resArr.join('')
 }
 
 
